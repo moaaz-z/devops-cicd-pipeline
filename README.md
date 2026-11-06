@@ -1,4 +1,4 @@
-# 🐳 DevOps CI/CD Pipeline Demo
+# DevOps CI/CD Pipeline Demo
 
 A complete DevOps project demonstrating containerization with **Docker** and automated CI/CD with **Jenkins** for a Node.js web application.
 
@@ -9,7 +9,7 @@ A complete DevOps project demonstrating containerization with **Docker** and aut
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Project Overview](#-project-overview)
 - [Project Structure](#-project-structure)
@@ -24,7 +24,7 @@ A complete DevOps project demonstrating containerization with **Docker** and aut
 
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
 This project provides a fully configured DevOps environment that includes:
 
@@ -39,31 +39,31 @@ This project provides a fully configured DevOps environment that includes:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 devops-cicd-pipeline/
 ├── src/
-│   ├── app.js                 # Express.js application entry point
-│   ├── views/
-│   │   └── index.ejs          # Home page template
-│   └── public/
-│       └── css/
-│           └── style.css      # Application styles
+│ ├── app.js # Express.js application entry point
+│ ├── views/
+│ │ └── index.ejs # Home page template
+│ └── public/
+│ └── css/
+│ └── style.css # Application styles
 ├── tests/
-│   └── app.test.js            # Unit tests (Jest + Supertest)
-├── Dockerfile                 # Multi-stage Docker build
-├── docker-compose.yml         # Docker Compose orchestration
-├── Jenkinsfile                # CI/CD pipeline configuration
-├── .dockerignore              # Docker build exclusions
-├── .gitignore                 # Git exclusions
-├── package.json               # Node.js dependencies & scripts
-└── README.md                  # This file
+│ └── app.test.js # Unit tests (Jest + Supertest)
+├── Dockerfile # Multi-stage Docker build
+├── docker-compose.yml # Docker Compose orchestration
+├── Jenkinsfile # CI/CD pipeline configuration
+├── .dockerignore # Docker build exclusions
+├── .gitignore # Git exclusions
+├── package.json # Node.js dependencies & scripts
+└── README.md # This file
 ```
 
 ---
 
-## ✅ Prerequisites
+## Prerequisites
 
 Make sure you have the following installed:
 
@@ -74,7 +74,7 @@ Make sure you have the following installed:
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone the repository
 
@@ -105,7 +105,7 @@ npm test
 
 ---
 
-## 🐳 Docker Setup
+## Docker Setup
 
 ### Build and Run with Docker
 
@@ -115,10 +115,10 @@ docker build -t devops-cicd-app:latest .
 
 # Run the container
 docker run -d \
-  --name devops-app \
-  -p 3000:3000 \
-  -e NODE_ENV=production \
-  devops-cicd-app:latest
+ --name devops-app \
+ -p 3000:3000 \
+ -e NODE_ENV=production \
+ devops-cicd-app:latest
 
 # Check if the container is running
 docker ps
@@ -163,12 +163,12 @@ The Dockerfile uses a **multi-stage build** for optimal image size and security:
 
 ---
 
-## ⚙️ Jenkins CI/CD Pipeline
+## Jenkins CI/CD Pipeline
 
 ### Pipeline Stages
 
 ```
-📥 Checkout → 📦 Install → 🔍 Quality → 🧪 Test → 🐳 Build → 🚀 Deploy → 🔍 Verify
+ Checkout → Install → Quality → Test → Build → Deploy → Verify
 ```
 
 | Stage | Description |
@@ -186,34 +186,34 @@ The Dockerfile uses a **multi-stage build** for optimal image size and security:
 1. **Access Jenkins** at `http://localhost:8080`
 
 2. **Get the initial admin password:**
-   ```bash
-   docker exec devops-jenkins cat /var/jenkins_home/secrets/initialAdminPassword
-   ```
+ ```bash
+ docker exec devops-jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+ ```
 
 3. **Install suggested plugins** + the following:
-   - Docker Pipeline
-   - NodeJS Plugin
-   - Git Plugin
+ - Docker Pipeline
+ - NodeJS Plugin
+ - Git Plugin
 
 4. **Create a new Pipeline job:**
-   - Go to **New Item** → **Pipeline**
-   - Under **Pipeline**, select **Pipeline script from SCM**
-   - Set **SCM** to **Git**
-   - Enter the repository URL
-   - Set the script path to `Jenkinsfile`
-   - Save and click **Build Now**
+ - Go to **New Item** → **Pipeline**
+ - Under **Pipeline**, select **Pipeline script from SCM**
+ - Set **SCM** to **Git**
+ - Enter the repository URL
+ - Set the script path to `Jenkinsfile`
+ - Save and click **Build Now**
 
 ### Pipeline Configuration
 
 The pipeline includes these features:
-- ⏱️ **30-minute timeout** — prevents hung builds
-- 🔒 **No concurrent builds** — avoids conflicts
-- 📜 **Build log rotation** — keeps last 10 builds
-- 🏷️ **Timestamps** — for debugging
+- **30-minute timeout** — prevents hung builds
+- **No concurrent builds** — avoids conflicts
+- **Build log rotation** — keeps last 10 builds
+- **Timestamps** — for debugging
 
 ---
 
-## 📡 API Endpoints
+## API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -226,29 +226,29 @@ The pipeline includes these features:
 **GET /health**
 ```json
 {
-  "status": "healthy",
-  "uptime": 123.456,
-  "timestamp": "2026-11-06T01:00:00.000Z",
-  "version": "1.0.0"
+ "status": "healthy",
+ "uptime": 123.456,
+ "timestamp": "2026-11-06T01:00:00.000Z",
+ "version": "1.0.0"
 }
 ```
 
 **GET /api/info**
 ```json
 {
-  "name": "devops-cicd-pipeline",
-  "version": "1.0.0",
-  "description": "A simple web application demonstrating Docker & Jenkins CI/CD",
-  "environment": "production",
-  "nodeVersion": "v20.x.x",
-  "platform": "linux",
-  "architecture": "x64"
+ "name": "devops-cicd-pipeline",
+ "version": "1.0.0",
+ "description": "A simple web application demonstrating Docker & Jenkins CI/CD",
+ "environment": "production",
+ "nodeVersion": "v20.x.x",
+ "platform": "linux",
+ "architecture": "x64"
 }
 ```
 
 ---
 
-## 🧪 Testing
+## Testing
 
 The project uses **Jest** and **Supertest** for automated testing.
 
@@ -271,13 +271,13 @@ npm run test:coverage
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
-┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│   Developer  │────▶│   GitHub     │────▶│   Jenkins    │
-│   (Push)     │     │   (SCM)      │     │   (CI/CD)    │
-└──────────────┘     └──────────────┘     └──────┬───────┘
+┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+│ Developer │────▶│ GitHub │────▶│ Jenkins │
+│ (Push) │ │ (SCM) │ │ (CI/CD) │
+└──────────────┘ └──────────────┘ └──────┬───────┘
                                                   │
                                           ┌───────▼───────┐
                                           │  Build & Test  │
@@ -297,7 +297,7 @@ npm run test:coverage
 
 ---
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -325,17 +325,17 @@ sudo systemctl restart jenkins
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
 ---
 
-## 👤 Author
+## Author
 
-**Moaaz Mohamed**  
-📧 MoaazMoh@icloud.com
+**Moaaz Mohamed** 
+ MoaazMoh@icloud.com
 
 ---
 
-> Built with ❤️ and automation
+> Built with and automation
