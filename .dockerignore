@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log*
+.git
+.gitignore
+.env*
+coverage
+.nyc_output
+tests
+*.md
+.idea
+.vscode
+docker-compose.yml
+Jenkinsfile

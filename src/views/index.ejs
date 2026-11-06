@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <span class="icon">🐳</span>
+        <h1><%= title %></h1>
+      </div>
+      <p class="subtitle">Containerized with Docker &bull; Automated with Jenkins</p>
+    </header>
+
+    <main>
+      <section class="status-card">
+        <h2>🟢 Application Status</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="label">Version</span>
+            <span class="value"><%= version %></span>
+          </div>
+          <div class="info-item">
+            <span class="label">Environment</span>
+            <span class="value env-badge"><%= environment %></span>
+          </div>
+          <div class="info-item">
+            <span class="label">Status</span>
+            <span class="value status-healthy">Running</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="pipeline-section">
+        <h2>⚙️ CI/CD Pipeline Stages</h2>
+        <div class="pipeline">
+          <div class="stage completed">
+            <div class="stage-icon">📥</div>
+            <div class="stage-name">Checkout</div>
+            <div class="stage-desc">Clone repository</div>
+          </div>
+          <div class="arrow">→</div>
+          <div class="stage completed">
+            <div class="stage-icon">📦</div>
+            <div class="stage-name">Install</div>
+            <div class="stage-desc">Install dependencies</div>
+          </div>
+          <div class="arrow">→</div>
+          <div class="stage completed">
+            <div class="stage-icon">🧪</div>
+            <div class="stage-name">Test</div>
+            <div class="stage-desc">Run unit tests</div>
+          </div>
+          <div class="arrow">→</div>
+          <div class="stage completed">
+            <div class="stage-icon">🐳</div>
+            <div class="stage-name">Build</div>
+            <div class="stage-desc">Build Docker image</div>
+          </div>
+          <div class="arrow">→</div>
+          <div class="stage active">
+            <div class="stage-icon">🚀</div>
+            <div class="stage-name">Deploy</div>
+            <div class="stage-desc">Deploy container</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="endpoints-section">
+        <h2>📡 API Endpoints</h2>
+        <div class="endpoint-list">
+          <div class="endpoint">
+            <span class="method get">GET</span>
+            <code>/</code>
+            <span class="desc">Home page (this page)</span>
+          </div>
+          <div class="endpoint">
+            <span class="method get">GET</span>
+            <code>/health</code>
+            <span class="desc">Health check endpoint</span>
+          </div>
+          <div class="endpoint">
+            <span class="method get">GET</span>
+            <code>/api/info</code>
+            <span class="desc">Application information</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="tech-section">
+        <h2>🛠️ Technology Stack</h2>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <span class="tech-icon">📗</span>
+            <span>Node.js</span>
+          </div>
+          <div class="tech-item">
+            <span class="tech-icon">🚂</span>
+            <span>Express.js</span>
+          </div>
+          <div class="tech-item">
+            <span class="tech-icon">🐳</span>
+            <span>Docker</span>
+          </div>
+          <div class="tech-item">
+            <span class="tech-icon">🔧</span>
+            <span>Jenkins</span>
+          </div>
+          <div class="tech-item">
+            <span class="tech-icon">🧪</span>
+            <span>Jest</span>
+          </div>
+          <div class="tech-item">
+            <span class="tech-icon">📦</span>
+            <span>Docker Compose</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 DevOps CI/CD Pipeline Demo &bull; Built with ❤️ and automation</p>
+    </footer>
+  </div>
+</body>
+</html>
